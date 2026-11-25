@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI for Pharmaceutical Sales &amp; Cross-Functional Excellence | David Hooi</title>
+<meta name="description" content="A 2-day hands-on programme by David Hooi (ex-Sales Director, GSK) for pharma sales and cross-functional teams: CO-STAR prompting, ChatGPT, Claude, Gemini and DeepSeek, AI research and slides, HCP role-play and coaching bots, sales analytics, dashboards, AI visuals and an AI implementation roadmap. HRD Corp claimable.">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="D Action Consultancy &amp; Services Sdn Bhd">
+<meta property="og:locale" content="en_MY">
+<meta property="og:title" content="AI for Pharmaceutical Sales &amp; Cross-Functional Excellence">
+<meta property="og:description" content="2-day hands-on programme for pharma teams: prompting, research, AI assistants, sales dashboards, AI visuals and an AI roadmap. HRD Corp claimable.">
+<meta property="og:image" content="https://dhooi266.github.io/ai-pharma-cross-functional/og-share-v1.jpg">
+<meta property="og:image:secure_url" content="https://dhooi266.github.io/ai-pharma-cross-functional/og-share-v1.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI for Pharmaceutical Sales &amp; Cross-Functional Excellence - trainer David Hooi, D Action Consultancy.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI for Pharma Sales &amp; Cross-Functional Excellence">
+<meta name="twitter:description" content="Rx: more AI, less admin. A 2-day hands-on programme for modern pharma teams. HRD Corp claimable.">
+<meta name="twitter:image" content="https://dhooi266.github.io/ai-pharma-cross-functional/og-share-v1.jpg">
+
+<meta name="theme-color" content="#0f4a33">
+<link rel="icon" href="assets/dac-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+
+<style>
+:root{
+  --green:#0f4a33;
+  --green-2:#16613f;
+  --green-soft:#e9f3ee;
+  --orange:#e8792f;
+  --orange-2:#c95f17;
+  --orange-soft:#fdf0e6;
+  --ink:#14211b;
+  --muted:#58665f;
+  --line:#dfe6e2;
+  --bg:#ffffff;
+  --bg-2:#f6f8f6;
+  --card:#ffffff;
+  --radius:18px;
+  --shadow:0 1px 2px rgba(15,74,51,.06),0 10px 30px rgba(15,74,51,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Plus Jakarta Sans","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+html[data-lang="zh"] body{font-family:"Noto Sans SC","Plus Jakarta Sans",system-ui,sans-serif;line-height:1.75}
+[data-lang="en"] .zh,[data-lang="zh"] .en{display:none !important}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.15;margin:0;letter-spacing:-.02em}
+html[data-lang="zh"] h1,html[data-lang="zh"] h2,html[data-lang="zh"] h3{letter-spacing:0;line-height:1.3}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:800}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-2)}
+html[data-lang="zh"] .eyebrow{letter-spacing:.06em}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--orange)}
+.sec{padding:88px 0}
+.sec-head{max-width:720px;margin-bottom:44px}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-2)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+.nav .logo img{height:40px;width:auto}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{border:0;background:transparent;font:inherit;font-size:14px;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--green);color:#fff}
+.nav .btn{padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero{background:radial-gradient(900px 500px at 85% 10%,rgba(232,121,47,.22),transparent 60%),linear-gradient(160deg,#0b3a28 0%,#0f4a33 55%,#145a3e 100%);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:72px}
+.hero .eyebrow{color:#ffb27a}
+.hero .eyebrow::before{background:#ffb27a}
+.hero h1{font-size:clamp(36px,5.2vw,62px);font-weight:800;margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:#ffb27a}
+.hero h1 small{display:block;font-size:.44em;font-weight:700;color:rgba(255,255,255,.82);margin-top:12px;letter-spacing:0}
+html[data-lang="zh"] .hero h1 small{font-size:.34em;color:rgba(255,255,255,.62)}
+.hero .tagline{font-size:20px;font-weight:700;color:#fff;margin:0 0 14px;padding-left:14px;border-left:3px solid var(--orange)}
+.hero .lead{font-size:19px;color:rgba(255,255,255,.85);max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.hero-tags span{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+.hero-photo{position:relative;justify-self:center;width:100%;max-width:420px}
+.hero-photo .frame{border-radius:28px;overflow:hidden;background:#0b3a28;box-shadow:0 30px 60px rgba(0,0,0,.35);aspect-ratio:4/4.8}
+.hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero-photo .badge{position:absolute;left:-26px;bottom:28px;background:#fff;color:var(--ink);border-radius:16px;padding:12px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.hero-photo .badge{text-decoration:none;transition:transform .2s}
+.hero-photo .badge:hover{transform:translateY(-3px)}
+.hero-photo .badge img.av{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid var(--orange)}
+.hero-photo .badge strong{display:block;font-size:15px}
+.hero-photo .badge small{display:block;color:var(--muted);font-size:13px}
+.hero-photo .badge small:first-child{color:var(--orange-2);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+/* stats */
+.stats{background:var(--bg-2);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 16px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:clamp(28px,3.4vw,40px);font-weight:800;color:var(--green);line-height:1.1}
+.stat span{color:var(--muted);font-size:14px;font-weight:500}
+
+/* gains */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.card .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--green-soft);color:var(--green);margin-bottom:18px}
+.card .ic svg{width:24px;height:24px}
+.card h3{margin-bottom:10px}
+.card p{color:var(--muted);font-size:16px}
+.card .tools{margin-top:14px;font-size:13px;font-weight:600;color:var(--green-2)}
+
+/* deliverables */
+.deliver{background:var(--green);color:#fff}
+.deliver .sec-head p{color:rgba(255,255,255,.78)}
+.deliver .eyebrow{color:#ffb27a}.deliver .eyebrow::before{background:#ffb27a}
+.dl{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;counter-reset:d}
+.dl li{list-style:none;display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px}
+.dl li::before{counter-increment:d;content:counter(d,decimal-leading-zero);font-weight:800;font-size:15px;color:var(--green);background:#ffb27a;border-radius:10px;min-width:40px;height:40px;display:grid;place-items:center}
+.dl strong{display:block;font-size:18px;margin-bottom:4px}
+.dl span{color:rgba(255,255,255,.75);font-size:15px}
+.dl{padding:0;margin:0}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.about-p{color:var(--muted);margin-top:16px;font-size:18px}
+.about-p b{color:var(--ink)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fact{background:var(--green);color:#fff;border-radius:var(--radius);padding:24px 20px;transition:transform .2s}
+.fact:nth-child(2),.fact:nth-child(3){background:var(--orange-soft);color:var(--ink)}
+.fact:hover{transform:translateY(-4px)}
+.fact b{display:block;font-size:40px;font-weight:800;line-height:1}
+.fact b small{font-size:.45em;margin-left:4px}
+.fact:nth-child(2) b,.fact:nth-child(3) b{color:var(--orange-2)}
+.fact span{display:block;margin-top:8px;font-size:15px;font-weight:600;opacity:.9}
+
+/* explorer */
+.explorer{background:var(--bg-2)}
+.rolefinder{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:28px}
+.rf-q{font-weight:700;margin-bottom:12px}
+.roles{display:flex;flex-wrap:wrap;gap:10px}
+.rf-q2{margin-top:20px}
+.ind{font:inherit;font-size:14px;font-weight:600;padding:8px 15px;border-radius:999px;border:1.5px dashed var(--line);background:var(--bg-2);color:var(--ink);cursor:pointer;transition:all .15s}
+.ind:hover{border-color:var(--orange);color:var(--orange-2)}
+.ind[aria-pressed="true"]{background:var(--orange);border:1.5px solid var(--orange);color:#fff}
+#rfInd li{background:var(--orange-soft);color:var(--orange-2)}
+#rfRole+#rfInd:not([hidden]){margin-top:18px}
+.role{font:inherit;font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:all .15s}
+.role:hover{border-color:var(--green-2);color:var(--green)}
+.role[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.rf-out{margin-top:20px;padding-top:18px;border-top:1px dashed var(--line);animation:fade .35s ease}
+.rf-h{font-weight:700;color:var(--orange-2);margin-bottom:10px}
+.rf-out ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rf-out li{background:var(--green-soft);border-radius:12px;padding:14px 16px;font-weight:600;font-size:15px;color:var(--green)}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.tabs button{position:relative;font:inherit;text-align:left;cursor:pointer;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:2px;color:var(--ink);transition:all .15s}
+.tabs button b{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-2)}
+.tabs button span{font-weight:700;font-size:17px}
+.tabs button[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 12px 28px rgba(15,74,51,.25)}
+.tabs button[aria-selected="true"] b{color:#ffb27a}
+.cnt{position:absolute;top:12px;right:14px;font-style:normal;font-size:12px;font-weight:800;background:var(--orange);color:#fff;border-radius:999px;padding:2px 9px;display:none}
+.cnt.on{display:block}
+.pane{display:grid;gap:12px;animation:fade .3s ease}
+.pane[hidden]{display:none}
+.mod{background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .2s,box-shadow .2s,opacity .2s}
+.mod summary{list-style:none;display:flex;align-items:center;gap:16px;padding:18px 20px;cursor:pointer}
+.mod summary::-webkit-details-marker{display:none}
+.mod .mn{flex:none;width:46px;height:46px;border-radius:12px;background:var(--green-soft);color:var(--green);font-weight:800;display:grid;place-items:center;transition:background .2s,color .2s}
+.mod[open] .mn{background:var(--green);color:#fff}
+.mt{flex:1;min-width:0}
+.mt small{display:block;font-size:13px;font-weight:600;color:var(--muted)}
+.mt strong{font-size:18px;line-height:1.35}
+.rel{display:none;flex:none;font-size:12px;font-weight:800;color:#fff;background:var(--orange);padding:4px 10px;border-radius:999px}
+.chev{flex:none;width:12px;height:12px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .2s;margin:0 6px 6px 0}
+.mod[open] .chev{transform:rotate(-135deg);margin:6px 6px 0 0}
+.mb{padding:0 20px 20px 82px}
+.mb ul{margin:0 0 14px;padding-left:18px;color:var(--muted)}
+.mb li{margin:4px 0}
+.mb li b{color:var(--ink)}
+.ex{background:var(--orange-soft);border-radius:12px;padding:12px 16px;font-size:15px}
+.ex b{color:var(--orange-2)}
+.explorer.filtering .mod{opacity:.5}
+.explorer.filtering .mod.hl{opacity:1;border-color:var(--orange);box-shadow:0 10px 26px rgba(232,121,47,.15)}
+.mod.hl .rel{display:inline-block}
+@media (max-width:960px){.about-grid{grid-template-columns:1fr;gap:32px}.rf-out ul{grid-template-columns:1fr}}
+@media (max-width:640px){.mb{padding:0 16px 18px}.mod summary{padding:16px;gap:12px}.mod .mn{width:40px;height:40px}.mt strong{font-size:16px}.rel{display:none!important}.tabs button{padding:14px}.tabs button span{font-size:15px}.fact b{font-size:32px}}
+
+/* impact */
+.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.imp{border-top:3px solid var(--orange);padding-top:20px}
+.imp h3{margin-bottom:8px}
+.imp p{color:var(--muted);font-size:16px}
+
+/* tools strip */
+.toolwall{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.toolwall span{padding:9px 16px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-weight:600;font-size:15px}
+
+/* how */
+.how{background:var(--bg-2)}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.steps{display:grid;gap:14px}
+.step{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.step .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--orange-soft);color:var(--orange-2);font-weight:800;display:grid;place-items:center}
+.step h3{font-size:17px;margin-bottom:4px}
+.step p{color:var(--muted);font-size:15px}
+.mix{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.bar{display:flex;height:16px;border-radius:999px;overflow:hidden;margin:16px 0 10px}
+.bar i:first-child{background:var(--orange);width:70%}
+.bar i:last-child{background:var(--green);width:30%}
+.legend{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);font-weight:600}
+.legend b{color:var(--ink)}
+.who{margin-top:28px}
+.who h3{margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;font-weight:600;padding:7px 13px;border-radius:999px;background:var(--green-soft);color:var(--green)}
+
+/* trainer */
+.trainer-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.t-photo{position:relative}
+.t-photo img.main{border-radius:24px;width:100%;aspect-ratio:4/4.8;object-fit:cover;object-position:top;box-shadow:var(--shadow)}
+.t-photo .quote{position:absolute;right:-18px;bottom:-22px;background:var(--orange);color:#fff;font-weight:700;font-size:17px;line-height:1.35;padding:18px 20px;border-radius:16px;max-width:250px;box-shadow:0 14px 30px rgba(201,95,23,.35)}
+.trainer h2 small{font-size:.5em;color:var(--green-2);font-weight:700;margin-left:6px}
+.t-role{color:var(--orange-2);font-weight:700;margin:10px 0 22px}
+.trainer p.bio{color:var(--muted);margin-bottom:14px}
+.trainer p.bio b{color:var(--ink)}
+.creds{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+.cred{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2);font-weight:600;font-size:15px}
+.cred svg{width:22px;height:22px;color:var(--green);flex:none}
+
+/* brands */
+.brands{background:var(--bg-2);padding:72px 0}
+.brands .box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.brands img{margin:0 auto;max-height:560px;width:auto}
+.brands h2{text-align:center;margin-bottom:10px}
+.brands .sub{text-align:center;color:var(--muted);margin-bottom:28px}
+
+/* logo strip */
+.logostrip{padding:34px 0 30px;border-bottom:1px solid var(--line);overflow:hidden}
+.ls-title{text-align:center;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;align-items:center;gap:56px;width:max-content;animation:scroll 60s linear infinite}
+.track img{height:46px;width:auto;flex:none;mix-blend-mode:multiply}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(calc(-50% - 28px))}}
+.logogrid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.logogrid div{flex:0 0 calc((100% - 6*14px)/7)}
+.logogrid div{height:96px;display:grid;place-items:center;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;transition:transform .2s,box-shadow .2s}
+.logogrid div:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.logogrid img{max-height:62px;max-width:100%;width:auto;object-fit:contain;mix-blend-mode:multiply}
+@media (prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}.track img[aria-hidden]{display:none}}
+@media (max-width:960px){.logogrid div{flex-basis:calc((100% - 4*14px)/5)}}
+@media (max-width:640px){.track img{height:36px}.track{gap:40px}.logogrid{gap:10px}.logogrid div{flex-basis:calc((100% - 2*10px)/3)}.logogrid div{height:78px;padding:10px}}
+
+/* cta */
+.cta{background:radial-gradient(700px 400px at 90% 0%,rgba(232,121,47,.25),transparent 60%),var(--green);color:#fff;text-align:center}
+.cta h2{max-width:760px;margin:0 auto 16px}
+.cta p{color:rgba(255,255,255,.8);max-width:620px;margin:0 auto;font-size:18px}
+.cta .hero-cta{justify-content:center}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px;margin-top:36px;font-weight:600}
+.contact a{text-decoration:none;display:inline-flex;gap:8px;align-items:center;color:rgba(255,255,255,.9)}
+.contact a:hover{color:#ffb27a}
+.contact svg{width:18px;height:18px}
+footer{background:#0b3a28;color:rgba(255,255,255,.6);font-size:14px;padding:28px 0}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer .flogo{background:#fff;border-radius:12px;padding:8px 14px;display:inline-flex}
+footer .flogo img{height:38px;width:auto}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+.card,.step,.cred{transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#b9d6c7;box-shadow:0 18px 40px rgba(15,74,51,.13)}
+.card:hover .ic{background:var(--green);color:#fff}
+.card .ic{transition:background .2s,color .2s}
+.step:hover{transform:translateX(4px)}
+.dl li{transition:background .2s}
+.dl li:hover{background:rgba(255,255,255,.11)}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto}}
+
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.wa-float svg{width:30px;height:30px;color:#fff}
+
+@media (max-width:960px){
+  .hero .wrap,.how-grid,.trainer-grid{grid-template-columns:1fr}
+  .hero-photo{max-width:360px}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .impact{grid-template-columns:1fr 1fr}
+  .t-photo{max-width:420px}
+}
+@media (max-width:640px){
+  .sec{padding:64px 0}
+  .wrap{padding:0 16px}
+  .grid-3,.dl,.impact,.creds{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .nav .btn{display:none}
+  .hero .wrap{padding-top:48px;padding-bottom:56px}
+  .hero-photo .badge{left:8px;bottom:12px}
+  .t-photo .quote{right:8px}
+  .hero-cta .btn{flex:1 1 100%}
+}
+/* --- additions for Social Media Content workshop --- */
+.tabs button span{line-height:1.3}
+.builds{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.build{position:relative;border-radius:var(--radius);padding:30px 26px 26px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.build:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(15,74,51,.13)}
+.build::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--green),var(--orange))}
+.build .k{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-2)}
+.build h3{font-size:22px;margin:8px 0 10px}
+.build p{color:var(--muted);font-size:16px}
+.build ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.build li{font-size:13px;font-weight:600;padding:6px 11px;border-radius:999px;background:var(--green-soft);color:var(--green)}
+.build .vis{height:120px;margin:-6px -6px 20px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.build .vis svg{width:100%;height:100%}
+/* 24/7 night shift timeline */
+.night{margin-top:34px;background:#0b1f17;color:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+.night h3{color:#fff;font-size:21px;margin-bottom:6px}
+.night>p{color:rgba(255,255,255,.7);font-size:15px;margin-bottom:22px}
+.tl{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
+.tl::before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:linear-gradient(90deg,#ffb27a,#2f8a63)}
+.tl div{position:relative;padding-top:38px}
+.tl div::before{content:"";position:absolute;top:8px;left:0;width:16px;height:16px;border-radius:50%;background:#0b1f17;border:3px solid #ffb27a}
+.tl b{display:block;font-size:20px;font-weight:800;color:#ffb27a}
+.tl span{display:block;font-size:14.5px;color:rgba(255,255,255,.85);margin-top:4px;line-height:1.45}
+.tl div:last-child::before{background:#ffb27a}
+.honest{margin-top:22px;display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:14px;padding:16px 18px;font-size:15px;color:var(--ink)}
+.honest svg{flex:none;width:22px;height:22px;color:var(--orange-2);margin-top:2px}
+
+
+/* prompt lab */
+.anatomy{background:var(--bg-2)}
+.lab{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+.lb-biz,.lb-fmt{font:inherit;font-size:14.5px;font-weight:600;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:all .15s}
+.lb-biz:hover,.lb-fmt:hover{border-color:var(--green);color:var(--green)}
+.lb-biz[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.lb-fmt[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.lab-cmp{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px;margin-top:24px}
+.lab-col{border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.lab-col .tag{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+.lab-col.weak{background:var(--bg-2);border:1.5px dashed var(--line)}
+.lab-col.weak .tag{background:#e6e9e7;color:var(--muted)}
+.lab-col.strong{background:linear-gradient(160deg,#0b3a28,#145a3e);color:#fff}
+.lab-col.strong .tag{background:rgba(232,121,47,.25);color:#ffb27a}
+.lab .pr{font-family:ui-monospace,Consolas,monospace;font-size:15px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--ink)}
+.pr-parts{margin:0;display:grid;gap:8px}
+.pr-parts div{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:baseline;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:9px 12px}
+.pr-parts dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#ffb27a}
+.pr-parts dd{margin:0;font-size:14.5px;color:rgba(255,255,255,.92);line-height:1.45}
+.outb{margin-top:auto}
+.outb b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;color:var(--muted)}
+.outb p{white-space:pre-line;font-size:15px;line-height:1.55;border-radius:12px;padding:14px 16px;margin:0}
+.weak .outb p{background:#fff;border:1px solid var(--line);color:var(--muted);font-style:italic}
+.strong .outb b{color:#ffb27a}
+.strong .outb p{background:#fff;color:var(--ink);box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.where-n{margin-top:14px;font-size:13.5px;color:var(--muted);text-align:center}
+
+/* one idea -> every platform */
+.hub{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px;align-items:stretch}
+.hub-core{background:linear-gradient(160deg,#c95f17,#e8792f);color:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center}
+.hub-core .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.18);margin-bottom:14px}
+.hub-core .ic svg{width:28px;height:28px}
+.hub-core .k{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#ffe2cc}
+.hub-core h3{color:#fff;font-size:24px;margin:6px 0 10px}
+.hub-core p{color:rgba(255,255,255,.9);font-size:15.5px}
+.hub-out{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.ch{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.ch:hover{transform:translateY(-3px);border-color:var(--orange)}
+.ch svg{flex:none;width:38px;height:38px;padding:8px;border-radius:11px;background:var(--green-soft);color:var(--green)}
+.ch b{display:block;font-size:16px}
+.ch span{display:block;font-size:14px;color:var(--muted);line-height:1.35}
+
+@media (max-width:960px){
+  .builds{grid-template-columns:1fr}
+  .lab-cmp,.hub{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:4px}
+  .tl::before{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(180deg,#ffb27a,#2f8a63)}
+  .tl div{padding:4px 0 14px 34px}
+  .tl div::before{top:8px}
+}
+@media (max-width:560px){.hub-out{grid-template-columns:1fr}.pr-parts div{grid-template-columns:1fr;gap:2px}.lab{padding:18px}}
+.ch b span{display:inline;font-size:inherit;color:inherit}
+.weak .outb{margin-top:0}
+
+/* pharma client logos */
+.pharma-logos{padding:64px 0;background:var(--bg-2);border-bottom:1px solid var(--line)}
+.pl-head{text-align:center;max-width:720px;margin:0 auto 30px}
+.pl-head h2{margin-top:14px}
+.pl-head p{color:var(--muted);margin-top:10px}
+.pl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pl-grid div{height:120px;display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 26px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.pl-grid div:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(15,74,51,.13)}
+.pl-grid img{max-height:66px;max-width:100%;width:auto;object-fit:contain}
+@media (max-width:760px){.pl-grid{grid-template-columns:repeat(2,1fr);gap:10px}.pl-grid div{height:92px;padding:14px}.pl-grid img{max-height:50px}}
+.pl-grid img[alt="GSK"],.pl-grid img[alt="Sanofi"]{max-height:50px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.42 9.42 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.44 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.04.72C5.79.72.69 5.8.69 12.06c0 2 .52 3.95 1.52 5.67L.6 23.28l5.68-1.49a11.3 11.3 0 0 0 5.76 1.47h.01c6.25 0 11.34-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.03z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm-1 1 9 7 9-7"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></g></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 14h.01M15 14h.01M2 13v3M22 13v3"/><circle cx="12" cy="3.5" r="1"/></g></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></g></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-5a2 2 0 0 0-2 2"/><path d="M20 4v14h-5"/></g></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></g></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></g></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="D Action Consultancy"><img src="assets/dac-logo.png" alt="DAC — Firing Up Growth"></a>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="https://wa.me/60184043913" target="_blank" rel="noopener">Enquire now</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">2-Day Hands-On Programme · Live Online or In-House · HRD Corp Claimable</span>
+      <h1>AI for Pharmaceutical Sales &amp; <em>Cross-Functional Excellence</em><small>AI-powered productivity, insights &amp; collaboration for modern pharma teams</small></h1>
+      <p class="tagline">Rx: more AI, less admin.</p>
+      <p class="lead">Medical reps, managers, marketing, medical affairs and support teams all lose hours to emails, reports, slides and the same questions every week. This programme shows them how to use AI to write and research faster, turn sales data into decisions, build their own AI assistants and plan how AI rolls out across the business — safely and in line with pharma compliance.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://wa.me/60184043913" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp David</a>
+        <a class="btn btn-ghost" href="#lab">Try the Pharma Prompt Lab</a>
+      </div>
+      <div class="hero-tags">
+        <span>8 hands-on sessions</span>
+        <span>CO-STAR prompting</span>
+        <span>AI role-play &amp; coaching bots</span>
+        <span>Dashboards &amp; AI roadmap</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame"><img src="assets/course-hero.jpg" alt="A cross-functional team working with an AI assistant and a sales dashboard" width="900" height="1350"></div>
+      <a class="badge" href="#trainer">
+        <img class="av" src="assets/david-hooi.jpg" alt="">
+        <div><small>Your trainer</small><strong>David Hooi</strong><small>Ex-Sales Director, GSK</small></div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="stats" aria-label="Highlights">
+  <div class="wrap">
+    <div class="stat"><b>6,000+</b><span>professionals trained</span></div>
+    <div class="stat"><b>100+</b><span>companies served</span></div>
+    <div class="stat"><b>20+</b><span>years of pharma sales leadership</span></div>
+    <div class="stat"><b>1</b><span>working AI assistant per participant</span></div>
+  </div>
+</section>
+
+<section class="logostrip" aria-label="Organisations trained">
+  <p class="ls-title">Trusted by teams at</p>
+  <div class="marquee"><div class="track"><img src="assets/logos/exxonmobil.png" alt="ExxonMobil"><img src="assets/logos/novartis.png" alt="Novartis"><img src="assets/logos/greateastern.png" alt="Great Eastern"><img src="assets/logos/rhb.png" alt="RHB"><img src="assets/logos/kwsp.png" alt="KWSP"><img src="assets/logos/tesla.png" alt="Tesla"><img src="assets/logos/intel.png" alt="Intel"><img src="assets/logos/electrolux.png" alt="Electrolux"><img src="assets/logos/tnb.png" alt="Tenaga Nasional"><img src="assets/logos/drbhicom.png" alt="DRB-HICOM"><img src="assets/logos/uobkayhian.png" alt="UOB Kay Hian"><img src="assets/logos/aon.png" alt="AON"><img src="assets/logos/haier.png" alt="Haier"><img src="assets/logos/sunway.png" alt="Sunway Medical Centre"><img src="assets/logos/nuskin.png" alt="Nu Skin"><img src="assets/logos/mubadala.png" alt="Mubadala Energy"><img src="assets/logos/proton.png" alt="Proton"><img src="assets/logos/kkmm.png" alt="KKMM"><img src="assets/logos/demant.png" alt="Demant"><img src="assets/logos/bsv.png" alt="BSV"><img src="assets/logos/menarini.png" alt="Menarini"><img src="assets/logos/jump.png" alt="Jump Retail"><img src="assets/logos/cid.png" alt="CID Realtors"><img src="assets/logos/kim.png" alt="KIM Realty"><img src="assets/logos/kbs.png" alt="KBS"><img src="assets/logos/ouji.png" alt="OUJI"><img src="assets/logos/exxonmobil.png" alt="" aria-hidden="true"><img src="assets/logos/novartis.png" alt="" aria-hidden="true"><img src="assets/logos/greateastern.png" alt="" aria-hidden="true"><img src="assets/logos/rhb.png" alt="" aria-hidden="true"><img src="assets/logos/kwsp.png" alt="" aria-hidden="true"><img src="assets/logos/tesla.png" alt="" aria-hidden="true"><img src="assets/logos/intel.png" alt="" aria-hidden="true"><img src="assets/logos/electrolux.png" alt="" aria-hidden="true"><img src="assets/logos/tnb.png" alt="" aria-hidden="true"><img src="assets/logos/drbhicom.png" alt="" aria-hidden="true"><img src="assets/logos/uobkayhian.png" alt="" aria-hidden="true"><img src="assets/logos/aon.png" alt="" aria-hidden="true"><img src="assets/logos/haier.png" alt="" aria-hidden="true"><img src="assets/logos/sunway.png" alt="" aria-hidden="true"><img src="assets/logos/nuskin.png" alt="" aria-hidden="true"><img src="assets/logos/mubadala.png" alt="" aria-hidden="true"><img src="assets/logos/proton.png" alt="" aria-hidden="true"><img src="assets/logos/kkmm.png" alt="" aria-hidden="true"><img src="assets/logos/demant.png" alt="" aria-hidden="true"><img src="assets/logos/bsv.png" alt="" aria-hidden="true"><img src="assets/logos/menarini.png" alt="" aria-hidden="true"><img src="assets/logos/jump.png" alt="" aria-hidden="true"><img src="assets/logos/cid.png" alt="" aria-hidden="true"><img src="assets/logos/kim.png" alt="" aria-hidden="true"><img src="assets/logos/kbs.png" alt="" aria-hidden="true"><img src="assets/logos/ouji.png" alt="" aria-hidden="true"></div></div>
+</section>
+
+<section class="pharma-logos" aria-labelledby="pl-h">
+  <div class="wrap">
+    <div class="pl-head">
+      <span class="eyebrow">Pharma experience</span>
+      <h2 id="pl-h">Pharma companies David has worked with</h2>
+      <p>From 20+ years in sales leadership at GSK to AI training for pharmaceutical and healthcare teams across Malaysia.</p>
+    </div>
+    <div class="pl-grid">
+      <div><img src="assets/logos/gsk.png" alt="GSK"></div>
+      <div><img src="assets/logos/novartis.png" alt="Novartis"></div>
+      <div><img src="assets/logos/menarini.png" alt="Menarini"></div>
+      <div><img src="assets/logos/reckitt.png" alt="Reckitt"></div>
+      <div><img src="assets/logos/eisai.png" alt="Eisai"></div>
+      <div><img src="assets/logos/sanofi.png" alt="Sanofi"></div>
+      <div><img src="assets/logos/hoepharma.png" alt="Taisho Hoe Pharmaceuticals"></div>
+      <div><img src="assets/logos/bsv.png" alt="BSV Biosciences"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About the programme</span>
+      <h2 style="margin-top:14px">One programme for the whole pharma team, not just sales</h2>
+      <p class="about-p"><b>AI for Pharmaceutical Sales &amp; Cross-Functional Excellence</b> builds practical AI skills across the functions that make a pharma business run. <b>Day 1</b> covers prompting, the leading AI models, AI for slides and research, your own AI assistant, and data and financial analysis. <b>Day 2</b> moves into an AI dashboard build clinic and AI visuals, video and avatars, and ends with each team presenting its AI implementation roadmap.</p>
+      <p class="about-p">Every exercise uses pharma scenarios: HCP follow-ups after a CME, clinical paper summaries, detail aid reviews, HCP segmentation and personas, territory performance, sales forecasts, role-play with an AI doctor, and a product launch campaign. Participants practise with mock data and learn where human and medical review must stay in the loop.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>2</b><span>days, fully hands-on</span></div>
+      <div class="fact"><b>8</b><span>sessions + a final team roadmap</span></div>
+      <div class="fact"><b>10+</b><span>AI tools, from ChatGPT and Claude to Gemini, NotebookLM and HeyGen</span></div>
+      <div class="fact"><b>HRD<small>Corp</small></b><span>claimable</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="outcomes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What every participant leaves with</span>
+      <h2 style="margin-top:14px">Tools they use the next morning, not slides they forget</h2>
+      <p>Participants build real content, analyses and assistants for pharma work during the programme.</p>
+    </div>
+    <div class="builds">
+      <article class="build">
+        <div class="vis" aria-hidden="true"><svg viewBox="0 0 300 120"><rect x="20" y="14" width="260" height="96" rx="10" fill="#fff" stroke="#dfe6e2"/><g font-family="sans-serif" font-size="11" font-weight="800"><rect x="34" y="24" width="22" height="13" rx="3" fill="#0f4a33"/><text x="41" y="34" fill="#fff">C</text><rect x="34" y="40" width="22" height="13" rx="3" fill="#0f4a33"/><text x="40" y="50" fill="#fff">O</text><rect x="34" y="56" width="22" height="13" rx="3" fill="#e8792f"/><text x="42" y="66" fill="#fff">S</text><rect x="34" y="72" width="22" height="13" rx="3" fill="#0f4a33"/><text x="41" y="82" fill="#fff">T</text><rect x="34" y="88" width="22" height="13" rx="3" fill="#0f4a33"/><text x="41" y="98" fill="#fff">A</text></g><rect x="64" y="28" width="110" height="6" rx="3" fill="#e9f3ee"/><rect x="64" y="44" width="90" height="6" rx="3" fill="#e9f3ee"/><rect x="64" y="60" width="104" height="6" rx="3" fill="#fdf0e6"/><rect x="64" y="76" width="80" height="6" rx="3" fill="#e9f3ee"/><rect x="64" y="92" width="96" height="6" rx="3" fill="#e9f3ee"/><path d="m196 62 18 0" stroke="#e8792f" stroke-width="3" stroke-linecap="round"/><path d="m208 55 7 7-7 7" fill="none" stroke="#e8792f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="226" y="30" width="42" height="62" rx="6" fill="#0f4a33"/><rect x="232" y="38" width="30" height="5" rx="2.5" fill="#ffb27a"/><rect x="232" y="48" width="26" height="5" rx="2.5" fill="rgba(255,255,255,.5)"/><rect x="232" y="58" width="28" height="5" rx="2.5" fill="rgba(255,255,255,.5)"/><rect x="232" y="68" width="22" height="5" rx="2.5" fill="rgba(255,255,255,.5)"/></svg></div>
+        <span class="k">Outcome 1 · Faster, safer content</span>
+        <h3>Emails, summaries and slides in minutes</h3>
+        <p>HCP follow-ups, clinical paper summaries, detail aid checks, research briefs and presentation decks, produced with CO-STAR prompts and checked before they go out.</p>
+        <ul><li>CO-STAR prompts</li><li>Source-cited research</li><li>AI slide decks</li></ul>
+      </article>
+      <article class="build">
+        <div class="vis" aria-hidden="true"><svg viewBox="0 0 300 120"><rect x="20" y="14" width="260" height="96" rx="10" fill="#fff" stroke="#dfe6e2"/><g fill="#e9f3ee"><rect x="32" y="24" width="56" height="22" rx="5"/><rect x="94" y="24" width="56" height="22" rx="5"/><rect x="156" y="24" width="56" height="22" rx="5"/></g><rect x="218" y="24" width="50" height="22" rx="5" fill="#fdf0e6"/><rect x="40" y="31" width="26" height="8" rx="4" fill="#0f4a33"/><rect x="102" y="31" width="30" height="8" rx="4" fill="#0f4a33"/><rect x="164" y="31" width="22" height="8" rx="4" fill="#e8792f"/><path d="M40 96 70 80l26 6 30-24 28 10 30-22 30 8 30-18" fill="none" stroke="#0f4a33" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M184 58l30 8 30-18" fill="none" stroke="#e8792f" stroke-width="3" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M184 58l30 20 30-4" fill="none" stroke="#2f8a63" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/></svg></div>
+        <span class="k">Outcome 2 · Data to decisions</span>
+        <h3>A pharma sales dashboard &amp; forecast</h3>
+        <p>Sales data interpretation, trend forecasting, territory performance and pricing what-ifs, plus a dashboard built from your own (masked) working file.</p>
+        <ul><li>Territory analysis</li><li>Forecasts</li><li>Dashboards</li></ul>
+      </article>
+      <article class="build">
+        <div class="vis" aria-hidden="true"><svg viewBox="0 0 300 120"><rect x="20" y="14" width="260" height="96" rx="10" fill="#0b1f17"/><rect x="40" y="26" width="120" height="20" rx="10" fill="rgba(255,255,255,.14)"/><rect x="50" y="33" width="80" height="6" rx="3" fill="rgba(255,255,255,.6)"/><rect x="140" y="54" width="120" height="20" rx="10" fill="#e8792f"/><rect x="150" y="61" width="90" height="6" rx="3" fill="#fff"/><rect x="40" y="82" width="140" height="20" rx="10" fill="rgba(255,255,255,.14)"/><rect x="50" y="89" width="100" height="6" rx="3" fill="rgba(255,255,255,.6)"/><circle cx="248" cy="92" r="11" fill="#2f8a63"/><path d="m243 92 4 4 7-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="k">Outcome 3 · AI assistants</span>
+        <h3>Your own working AI assistant</h3>
+        <p>A Gem or custom GPT that does a repetitive job: an HCP role-play partner, a sales coach, a daily sales synthesiser or a department SOP helper.</p>
+        <ul><li>Gems &amp; custom GPTs</li><li>Role-play bot</li><li>Agentic AI</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec anatomy" id="lab">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Pharma Prompt Lab</span>
+      <h2 style="margin-top:14px">Same AI. Better prompt. Better result.</h2>
+      <p>Most people type one line and get a generic answer. Module 1 teaches the CO-STAR framework so AI knows the context, the reader and the rules. Pick a pharma task to see the difference.</p>
+    </div>
+    <div class="lab">
+      <div class="lab-pick">
+        <p class="rf-q">Choose a pharma task</p>
+        <div class="roles" role="group" aria-label="Pharma task">
+          <button type="button" class="lb-biz" data-k="hcp" aria-pressed="true">HCP follow-up after a CME</button>
+          <button type="button" class="lb-biz" data-k="paper" aria-pressed="false">Clinical paper summary for a GP</button>
+          <button type="button" class="lb-biz" data-k="territory" aria-pressed="false">Territory performance update</button>
+          <button type="button" class="lb-biz" data-k="review" aria-pressed="false">Detail aid check before review</button>
+        </div>
+      </div>
+      <div class="lab-cmp" aria-live="polite">
+        <div class="lab-col weak">
+          <span class="tag">Typical prompt</span>
+          <p class="pr" id="labWeak"></p>
+          <div class="outb"><b>Typical result</b><p id="labWeakOut"></p></div>
+        </div>
+        <div class="lab-col strong">
+          <span class="tag">CO-STAR prompt</span>
+          <dl class="pr-parts" id="labParts"></dl>
+          <div class="outb"><b>Sample AI draft</b><p id="labOut"></p></div>
+        </div>
+      </div>
+    </div>
+    <p class="where-n">Illustrative examples written for this page. Viroclear is a fictional product, and all names and figures are fictional. AI drafts never replace your company's medical, legal and regulatory review.</p>
+  </div>
+</section>
+
+<section class="sec" id="assistants">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cross-functional AI assistants</span>
+      <h2 style="margin-top:14px">One assistant for every team that answers the same questions every week</h2>
+      <p>In Module 4, participants build Gems and custom GPTs that take on repetitive work across sales, HR and compliance, and learn where an assistant stops and an AI agent begins.</p>
+    </div>
+    <div class="hub">
+      <div class="hub-core">
+        <div class="ic"><svg><use href="#i-bot"/></svg></div>
+        <span class="k">Built once, used every day</span>
+        <h3>Name · Instructions · Knowledge</h3>
+        <p>Give an assistant a clear role, your rules and your approved documents, and every user gets the same standard answer. It drafts and advises; people decide and send.</p>
+      </div>
+      <div class="hub-out">
+        <div class="ch"><svg><use href="#i-user"/></svg><div><b>HCP role-play bot</b><span>Practise detailing with an AI doctor, scored on SPIN questions</span></div></div>
+        <div class="ch"><svg><use href="#i-target"/></svg><div><b>Sales coaching bot</b><span>Just-in-time coaching nudges for each rep</span></div></div>
+        <div class="ch"><svg><use href="#i-chart"/></svg><div><b>Daily sales synthesiser</b><span>Turns field reports into one clear daily summary</span></div></div>
+        <div class="ch"><svg><use href="#i-book"/></svg><div><b>HR SOP explainer</b><span>Answers leave, benefits and policy questions from the handbook</span></div></div>
+        <div class="ch"><svg><use href="#i-chat"/></svg><div><b>Recruitment assistant</b><span>Screens résumés against the JD and drafts interview questions</span></div></div>
+        <div class="ch"><svg><use href="#i-shield"/></svg><div><b>Compliance pre-check</b><span>Flags issues in speaker fees, sponsorships and materials before submission</span></div></div>
+      </div>
+    </div>
+
+    <div class="night">
+      <h3>Prompt chaining in action: from CRM data to a personalised HCP plan</h3>
+      <p>Each step feeds the next. This is the HCP profiling workflow participants practise with mock CRM data.</p>
+      <div class="tl">
+        <div><b>CRM data</b><span>Export anonymised HCP records: specialty, region, visit history.</span></div>
+        <div><b>Segments</b><span>AI groups HCPs by specialty, goals and engagement level.</span></div>
+        <div><b>Personas</b><span>Each segment becomes a persona with needs, concerns and preferred channels.</span></div>
+        <div><b>Engagement plan</b><span>Tailored messages, channels and visit frequency for each persona.</span></div>
+        <div><b>Next visit</b><span>The rep reviews the plan and personalises the next HCP call.</span></div>
+      </div>
+    </div>
+    <div class="honest"><svg><use href="#i-info"/></svg><span>AI drafts, people decide. Participants learn to mask data before uploading, never enter patient or identifiable HCP data into public AI tools, check every clinical figure against its source (AI can invent studies), and send promotional and medical content through your company's approval process. We confirm which AI tools your organisation allows before the programme.</span></div>
+  </div>
+</section>
+
+<section class="sec explorer" id="programme">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Explore the programme</span>
+      <h2 style="margin-top:14px">Day 1 to write, research and automate. Day 2 to build, create and plan.</h2>
+      <p>Pick your role to see which modules matter most and what you could do with AI. Open any module for the details.</p>
+    </div>
+
+    <div class="rolefinder">
+      <p class="rf-q">I work in…</p>
+      <div class="roles" role="group" aria-label="Role">
+        <button type="button" class="role" data-role="rep" aria-pressed="false">Medical Rep / KAM</button>
+        <button type="button" class="role" data-role="mgr" aria-pressed="false">Sales Manager</button>
+        <button type="button" class="role" data-role="mkt" aria-pressed="false">Marketing &amp; Brand</button>
+        <button type="button" class="role" data-role="med" aria-pressed="false">Medical Affairs</button>
+        <button type="button" class="role" data-role="ops" aria-pressed="false">HR, Finance &amp; Admin</button>
+      </div>
+      <div class="rf-out" id="rfOut" hidden>
+        <div id="rfRole" hidden>
+          <p class="rf-h">For your role, what you could do with AI:</p>
+          <ul id="rfWins"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Programme days">
+      <button type="button" role="tab" id="tab-d1" aria-controls="pane-d1" aria-selected="true"><b>Day 1</b><span>Prompting, Content, Research &amp; Your AI Assistant</span><i class="cnt" data-cnt="d1"></i></button>
+      <button type="button" role="tab" id="tab-d2" aria-controls="pane-d2" aria-selected="false"><b>Day 2</b><span>Dashboards, Visuals &amp; AI Roadmap</span><i class="cnt" data-cnt="d2"></i></button>
+    </div>
+    <div class="pane" id="pane-d1" role="tabpanel" aria-labelledby="tab-d1">
+          <details class="mod" data-mod="m1" open>
+            <summary><span class="mn">M1</span><span class="mt"><small>9:00 – 10:30</small><strong>Introduction to AI &amp; Prompt Engineering</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>AI already at work in pharma: news room and "guess the cost" challenge</li><li>What AI is, the 5 levels of AI and how to bring it into the workplace</li><li>What makes a good prompt: clarity, context and constraints</li><li>The <b>CO-STAR</b> framework: Context, Objective, Style, Tone, Audience, Response</li><li>Case study: how a small business grew its reach with AI content</li></ul>
+              <p class="ex"><b>Exercise 1:</b> turn a messy request into a clean CO-STAR prompt. <b>Exercise 2 (breakout):</b> write a CO-STAR social media post.</p>
+            </div>
+          </details>
+          <details class="mod" data-mod="m2">
+            <summary><span class="mn">M2</span><span class="mt"><small>10:45 – 1:00</small><strong>Using LLMs for Content, Analysis &amp; Business Insights</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>How large language models work: <b>ChatGPT, Claude, DeepSeek and Gemini</b>, and which to use for which job</li><li>Pharma market trend analysis, a medical rep performance dashboard and a detail aid review against approved product data</li><li>Building a simple app in Gemini Canvas, using a dosage-estimation tool as the case study</li><li>HCP segmentation, personas and engagement plans with prompt chaining</li><li>Benefits, limits, bias, hallucination and ethical use of LLMs</li></ul>
+              <p class="ex"><b>Hands-on:</b> four tool exercises, one in each LLM, plus an HCP persona built in breakout rooms.</p>
+            </div>
+          </details>
+          <details class="mod" data-mod="m3">
+            <summary><span class="mn">M3</span><span class="mt"><small>2:00 – 3:30</small><strong>AI for PowerPoint Presentations &amp; Research</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>Generating presentation-ready slide decks from notes and outlines</li><li>Market and competitor research with source-based AI that cites every answer</li><li>Turning scattered SOPs, policies and reports into one searchable knowledge base</li><li>One reusable workflow: upload, extract, structure, present</li></ul>
+              <p class="ex"><b>Exercises:</b> turn your notes into a deck, extract insights from 2–3 market documents, and build a department document Q&amp;A.</p>
+            </div>
+          </details>
+          <details class="mod" data-mod="m4">
+            <summary><span class="mn">M4</span><span class="mt"><small>3:45 – 5:00</small><strong>Creating an AI Assistant &amp; Chatbot to Automate Work</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>Custom GPTs and Gems: name, instructions and knowledge; what they can and cannot do</li><li><b>HCP role-play bot</b> scored on SPIN questions, and a <b>sales coaching bot</b></li><li>Department assistants: HR SOP explainer, recruitment screening, daily sales synthesiser</li><li>Agentic AI: how agents plan, use tools and act, with a pharma compliance pre-check use case and guardrails</li></ul>
+              <p class="ex"><b>Breakout:</b> build your own role-play bot in pairs. <b>By 5 PM</b> every participant has a working AI assistant.</p>
+            </div>
+          </details>
+          <details class="mod" data-mod="m5">
+            <summary><span class="mn">M5</span><span class="mt"><small>5:00 – 6:00</small><strong>Data &amp; Financial Analysis with AI</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>Sales data interpretation: units, revenue, average selling price, top and bottom performers</li><li>Trend forecasting from 12–24 months of sales history</li><li>Territory performance: growth, share and where to invest next</li><li>Pricing analytics: price elasticity and revenue what-ifs</li></ul>
+              <p class="ex"><b>Live demos:</b> basic and advanced CO-STAR prompts for each analysis, run on a pharma sales dataset. <b>Team pick:</b> which territory gets next quarter's investment?</p>
+            </div>
+          </details>
+    </div>
+    <div class="pane" id="pane-d2" role="tabpanel" aria-labelledby="tab-d2" hidden>
+          <details class="mod" data-mod="m6" open>
+            <summary><span class="mn">M6</span><span class="mt"><small>9:00 – 10:30</small><strong>Build Clinic: AI Dashboard Creation</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>Protect the data first: mask names, IDs and sensitive figures before upload</li><li>Build a dashboard of the numbers you report every month, from your own working file</li><li>Find one insight that helps your audience decide</li><li>Save a <b>reusable generator</b> prompt so next month takes minutes</li><li>Turn the analysis into slides with Gemini and Gamma</li></ul>
+              <p class="ex"><b>Applied lab:</b> 30 minutes to build, then a 3-minute share: one screen, one insight, one action.</p>
+            </div>
+          </details>
+          <details class="mod" data-mod="m7">
+            <summary><span class="mn">M7</span><span class="mt"><small>10:45 – 1:00</small><strong>AI for Visual Content Creation</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li><b>Image:</b> a simple prompt formula, and the same prompt improved step by step in Leonardo AI, Ideogram and Dreamina</li><li><b>Video:</b> animate a still image into a short looping clip</li><li><b>Avatar:</b> a speaking spokesperson in HeyGen from a 30–60 second script</li></ul>
+              <p class="ex"><b>Business challenge:</b> teams create launch visuals, a booth clip and a spokesperson avatar for Viroclear, a fictional product.</p>
+            </div>
+          </details>
+          <details class="mod" data-mod="m8">
+            <summary><span class="mn">FP</span><span class="mt"><small>2:00 – 4:00</small><strong>Final Assignment: AI Implementation Roadmap</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>The five building blocks of an AI plan and six steps from problem to scaled solution</li><li>A pilot readiness checklist and an impact vs effort matrix to find quick wins</li><li>Change management: communicate ROI, share pilot wins, bring people along</li></ul>
+              <p class="ex"><b>Group workshop:</b> turn one real departmental process into a mini AI plan, then present it: problem, AI use case, data, pilot and success measures.</p>
+            </div>
+          </details>
+          <details class="mod" data-mod="bonus">
+            <summary><span class="mn">+</span><span class="mt"><small>Optional add-on · Lunch &amp; Learn</small><strong>Vibe Coding: Build a Pharma App with AI in 30 Minutes</strong></span><span class="rel">For your role</span><span class="chev" aria-hidden="true"></span></summary>
+            <div class="mb">
+              <ul><li>What vibe coding is: describe an app in plain language and AI builds it</li><li>Three live builds: a product-knowledge arcade game, a CME quiz challenge and a medical request tracker</li><li>Build fast, build safely: mock data only, no patient or HCP data</li></ul>
+            </div>
+          </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec deliver">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Walk away with</span>
+      <h2 style="margin-top:14px">Real work, built during the programme</h2>
+      <p>Participants don't just learn about AI. They leave with tools and templates for their daily job.</p>
+    </div>
+    <ol class="dl">
+      <li><div><strong>A pharma CO-STAR prompt toolkit</strong><span>Prompts for HCP emails, summaries, reviews and updates.</span></div></li>
+      <li><div><strong>HCP personas &amp; engagement plan</strong><span>Built by chaining prompts from mock CRM data.</span></div></li>
+      <li><div><strong>An AI research brief &amp; slide deck</strong><span>Source-cited market insight, turned into a deck.</span></div></li>
+      <li><div><strong>Your own AI assistant</strong><span>A role-play, coaching or department bot that works.</span></div></li>
+      <li><div><strong>A sales dashboard &amp; reusable generator</strong><span>Your monthly numbers, refreshed in minutes.</span></div></li>
+      <li><div><strong>A launch visual, video clip &amp; avatar</strong><span>One campaign idea in three AI formats.</span></div></li>
+      <li style="grid-column:1/-1"><div><strong>A team AI implementation roadmap</strong><span>A real departmental process, scored by impact and effort, with the data, pilot plan and success measures needed to start, presented on the final afternoon.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Impact for your organisation</span>
+      <h2 style="margin-top:14px">More time with HCPs, sharper insight, with people in charge</h2>
+    </div>
+    <div class="impact">
+      <div class="imp"><h3>Hours back every week</h3><p>Emails, reports, summaries and slides produced in minutes instead of hours.</p></div>
+      <div class="imp"><h3>Better HCP engagement</h3><p>Segments, personas and role-play practice make every visit more relevant.</p></div>
+      <div class="imp"><h3>Cross-functional consistency</h3><p>Shared prompts and assistants give every team the same accurate answer.</p></div>
+      <div class="imp"><h3>Responsible adoption</h3><p>Clear guardrails on data, verification and approval, plus a roadmap to scale.</p></div>
+    </div>
+    <div class="toolwall" aria-label="Tools covered">
+      <span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>DeepSeek</span><span>Microsoft Copilot</span><span>NotebookLM</span><span>Gamma</span><span>Gems &amp; custom GPTs</span><span>Leonardo AI</span><span>Ideogram</span><span>HeyGen</span><span>CO-STAR</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec how">
+  <div class="wrap how-grid">
+    <div>
+      <span class="eyebrow">How it's delivered</span>
+      <h2 style="margin:14px 0 28px">Learn by doing, on pharma scenarios</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div><h3>Live demos with ready-made prompts</h3><p>See each tool work on real pharma tasks, then copy the CO-STAR prompt.</p></div></div>
+        <div class="step"><div class="n">2</div><div><h3>Hands-on exercises</h3><p>Participants write, analyse and build with pharma mock data.</p></div></div>
+        <div class="step"><div class="n">3</div><div><h3>Breakouts, polls &amp; chat storms</h3><p>Teams build role-play bots and personas, and share in the chat. Cameras on!</p></div></div>
+        <div class="step"><div class="n">4</div><div><h3>Final roadmap</h3><p>Each team presents its AI implementation plan.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="mix">
+        <h3>Training mix</h3>
+        <div class="bar" aria-hidden="true"><i></i><i></i></div>
+        <div class="legend"><span><b>70%</b> hands-on exercises &amp; project</span><span><b>30%</b> concepts &amp; demos</span></div>
+        <div class="who">
+          <h3>Ideal for</h3>
+          <div class="chips">
+            <span>Medical representatives</span>
+            <span>Key account managers</span>
+            <span>Sales managers</span>
+            <span>Marketing &amp; brand teams</span>
+            <span>Medical affairs</span>
+            <span>HR, finance &amp; admin</span>
+          </div>
+        </div>
+        <p style="margin-top:22px;color:var(--muted);font-size:15px">No technical background needed. Runs live online or in-house. Participants bring a laptop; free versions of most tools are enough, and we check your company's AI policy beforehand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec trainer" id="trainer">
+  <div class="wrap trainer-grid">
+    <div class="t-photo">
+      <img class="main" src="assets/david-hooi-2.jpg" alt="David Hooi" width="700" height="836">
+      <div class="quote">“Transform workflows. Accelerate growth. Lead with AI.”</div>
+    </div>
+    <div>
+      <span class="eyebrow">Your trainer</span>
+      <h2 style="margin-top:14px">David Hooi<small>BEng, MBA</small></h2>
+      <p class="t-role">AI Adoption Specialist · Corporate Trainer · Founder, D Action Consultancy</p>
+      <p class="bio">David spent <b>over 20 years in sales and leadership at GlaxoSmithKline (GSK)</b>, where he served as Sales Director and earned multiple Sales Excellence Awards. He knows pharma from the inside: HCP calls, CMEs, territory targets, medical review and the reports that eat into selling time.</p>
+      <p class="bio">As founder of D Action Consultancy &amp; Services, he specialises in <b>AI adoption for sales, marketing and productivity</b>. He has trained <b>6,000+ professionals across 100+ companies</b>, including pharmaceutical multinationals, banks, insurers and government agencies.</p>
+      <div class="creds">
+        <div class="cred"><svg><use href="#i-check"/></svg>HRD Corp Accredited Trainer</div>
+        <div class="cred"><svg><use href="#i-check"/></svg>Google AI Leader</div>
+        <div class="cred"><svg><use href="#i-check"/></svg>Ex-Sales Director, GSK</div>
+        <div class="cred"><svg><use href="#i-check"/></svg>Bilingual: English &amp; Mandarin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands">
+  <div class="wrap">
+    <div class="box">
+      <h2>Trusted by leading organisations</h2>
+      <p class="sub">Pharmaceutical companies, banks, insurers, multinationals, government agencies and growing SMEs.</p>
+      <div class="logogrid"><div><img src="assets/logos/exxonmobil.png" alt="ExxonMobil"></div><div><img src="assets/logos/novartis.png" alt="Novartis"></div><div><img src="assets/logos/greateastern.png" alt="Great Eastern"></div><div><img src="assets/logos/rhb.png" alt="RHB"></div><div><img src="assets/logos/kwsp.png" alt="KWSP"></div><div><img src="assets/logos/tesla.png" alt="Tesla"></div><div><img src="assets/logos/intel.png" alt="Intel"></div><div><img src="assets/logos/electrolux.png" alt="Electrolux"></div><div><img src="assets/logos/tnb.png" alt="Tenaga Nasional"></div><div><img src="assets/logos/drbhicom.png" alt="DRB-HICOM"></div><div><img src="assets/logos/uobkayhian.png" alt="UOB Kay Hian"></div><div><img src="assets/logos/aon.png" alt="AON"></div><div><img src="assets/logos/haier.png" alt="Haier"></div><div><img src="assets/logos/sunway.png" alt="Sunway Medical Centre"></div><div><img src="assets/logos/nuskin.png" alt="Nu Skin"></div><div><img src="assets/logos/mubadala.png" alt="Mubadala Energy"></div><div><img src="assets/logos/proton.png" alt="Proton"></div><div><img src="assets/logos/kkmm.png" alt="KKMM"></div><div><img src="assets/logos/demant.png" alt="Demant"></div><div><img src="assets/logos/bsv.png" alt="BSV"></div><div><img src="assets/logos/menarini.png" alt="Menarini"></div><div><img src="assets/logos/jump.png" alt="Jump Retail"></div><div><img src="assets/logos/cid.png" alt="CID Realtors"></div><div><img src="assets/logos/kim.png" alt="KIM Realty"></div><div><img src="assets/logos/kbs.png" alt="KBS"></div><div><img src="assets/logos/ouji.png" alt="OUJI"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta" id="contact">
+  <div class="wrap">
+    <h2>Give your pharma team more time for what matters</h2>
+    <p>Run the programme live online or in-house. Tell us about your therapy areas, teams and systems, and we'll tailor the datasets, exercises and assistant designs to your business. HRD Corp claimable.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/60184043913" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp +60 18-404 3913</a>
+      <a class="btn btn-ghost" href="mailto:david@daction.com"><svg><use href="#i-mail"/></svg>david@daction.com</a>
+    </div>
+    <div class="contact">
+      <a href="https://www.davidhooi.com" target="_blank" rel="noopener"><svg><use href="#i-web"/></svg>www.davidhooi.com</a>
+    </div>
+    <p style="margin-top:28px;font-size:13px;color:rgba(255,255,255,.55)">ChatGPT, Claude, Gemini, NotebookLM, DeepSeek, Microsoft Copilot, Gamma, Leonardo AI, Ideogram, Dreamina and HeyGen are trademarks of their respective owners. This independent programme is not affiliated with or endorsed by any of them.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span class="flogo"><img src="assets/dac-logo.png" alt="DAC — Firing Up Growth"></span><span>© 2026 D Action Consultancy &amp; Services Sdn Bhd (202501060150)</span></div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/60184043913" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>document.documentElement.classList.add("js");</script>
+<script>
+(function(){
+  /* prompt lab — CO-STAR: Context, Objective, Style, Tone, Audience, Response */
+  var LAB={
+    hcp:{w:"Write a thank-you email to a doctor.",
+      wo:"\"Dear Doctor, thank you for attending our event. We hope you found it useful. Please let us know if you need anything else. Best regards.\"",
+      p:["Dr. Lim, a cardiologist, attended our CME talk on hypertension management last night and asked about patient adherence.","Thank her and open a follow-up conversation on adherence support.","Short professional email with one follow-up question.","Warm, respectful, non-promotional.","A busy specialist who reads email on her phone.","Under 120 words; subject line included; no product claims."],
+      o:"Subject: Thank you for joining last night's CME\n\nDear Dr. Lim,\nThank you for joining last night's session on hypertension management. Your question on patient adherence sparked the best discussion of the evening.\n\nOur medical team has a short set of patient-education resources on adherence. Would it help if I shared them during a 10-minute visit next week?\n\nWhich suits your clinic better: Tuesday or Thursday?\n\nWarm regards,\nAina"},
+    paper:{w:"Summarise this clinical paper.",
+      wo:"\"This randomised, double-blind, placebo-controlled Phase III study evaluated the efficacy and safety of the investigational agent. The primary endpoint, time to sustained symptom resolution, was met (HR 1.42; 95% CI 1.21–1.67; p<0.001)…\"",
+      p:["A 12-page Phase III paper (attached) on Viroclear, a fictional antiviral.","Help a busy GP grasp the key findings in one minute.","3 bullets plus one 'what this means' line.","Plain English, neutral and balanced.","General practitioners in Malaysian clinics.","Use only figures from the paper and cite the page for each; flag anything unclear."],
+      o:"• WHO: 1,200 adults with mild-to-moderate infection (p. 3)\n• RESULT: symptoms resolved about 2 days sooner than placebo (p. 6)\n• SAFETY: side effects similar to placebo; the most common was mild nausea (p. 8)\n\nWHAT THIS MEANS: a possible option for early treatment. Check the approved prescribing information before use.\n\n⚠ Verify each figure against the cited page before sharing."},
+    territory:{w:"Write a sales update for my team.",
+      wo:"\"Hi team, here is our quarterly update. Some regions did well and some need to improve. Let's keep working hard and push for better results next quarter. Thanks.\"",
+      p:["Q3 results: Klang Valley 104% of target, Penang 97%, Johor 82%. Hospital accounts up 9%; clinic chains flat.","Celebrate the wins and agree a Q4 plan for Johor.","Team email: wins, gap, 3 focus actions, one ask.","Positive and direct, no blame.","Medical reps and area managers.","Under 150 words; actions as bullets."],
+      o:"Subject: Q3: Klang Valley over target, Johor push for Q4\n\nHi team,\nWell done, Klang Valley: 104% of target, and hospital accounts are up 9%. Penang was close behind at 97%.\nJohor finished at 82%, so that's our Q4 focus.\n\nQ4 actions:\n• Johor: joint visits with the area manager to the top 15 clinics\n• Re-engage flat clinic chains with a CME invitation\n• Share one winning HCP conversation at Friday's huddle\n\nAsk: send me your Johor top-5 list by Monday."},
+    review:{w:"Check this brochure.",
+      wo:"\"The brochure looks good overall. Consider a more engaging headline and more images. The content is clear and easy to read.\"",
+      p:["A draft rep detail aid for Viroclear 5 mg (fictional) and the approved product information, both attached.","Flag every claim that does not match the approved information, before medical review.","Table: claim · approved wording · issue · suggested fix.","Precise and neutral.","A brand manager preparing the file for medical review.","List every mismatch; invent nothing; mark uncertain items 'CHECK'."],
+      o:"CLAIM: \"Works in 24 hours\"\nAPPROVED: symptom relief from day 2 in most patients\nISSUE: overstated onset → FIX: use the approved wording\n\nCLAIM: \"No side effects\"\nAPPROVED: mild nausea reported in some patients\nISSUE: absolute safety claim → FIX: state the common side effect\n\nCLAIM: \"Safe for children\"\nAPPROVED: adults 18+ only\nISSUE: outside approved use → FIX: remove\n\nNext step: send to medical review with this table attached."}
+  };
+  var L=["Context","Objective","Style","Tone","Audience","Response"];
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+  function renderLab(k){var d=LAB[k];
+    document.getElementById('labWeak').textContent=d.w;
+    document.getElementById('labWeakOut').textContent=d.wo;
+    document.getElementById('labParts').innerHTML=L.map(function(l,i){return '<div><dt>'+l+'</dt><dd>'+esc(d.p[i])+'</dd></div>'}).join('');
+    document.getElementById('labOut').textContent=d.o;
+  }
+  document.querySelectorAll('.lb-biz').forEach(function(btn){btn.addEventListener('click',function(){
+    document.querySelectorAll('.lb-biz').forEach(function(b){b.setAttribute('aria-pressed',b===btn)});renderLab(btn.dataset.k)})});
+  renderLab('hcp');
+
+  /* programme tabs */
+  var tabs=document.querySelectorAll('.tabs [role=tab]');
+  function showTab(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);document.getElementById(b.getAttribute('aria-controls')).hidden=!on})}
+  tabs.forEach(function(b){b.addEventListener('click',function(){showTab(b)})});
+  /* role finder */
+  var R={
+    rep:{mods:["m1","m2","m4","m7"],wins:["HCP follow-ups and visit plans drafted in minutes","Detailing practice with an AI doctor, scored on your SPIN questions","Personalised engagement plans built from HCP personas"]},
+    mgr:{mods:["m4","m5","m6","m8"],wins:["A coaching bot that gives each rep just-in-time feedback","Territory performance and sales forecasts without manual spreadsheets","A dashboard and an AI roadmap for your whole team"]},
+    mkt:{mods:["m2","m3","m7"],wins:["Competitor and market research with every answer cited","Launch visuals, video clips and a speaking avatar from one idea","Detail aids pre-checked against approved wording before review"]},
+    med:{mods:["m2","m3","m4"],wins:["Clinical papers summarised for GPs, specialists or reps, with page references","A searchable, source-cited knowledge base of SOPs and references","An assistant that drafts consistent answers to repeat medical enquiries"]},
+    ops:{mods:["m3","m4","m5","m8"],wins:["An HR SOP explainer that answers policy questions from the handbook","Résumé screening and interview questions drafted against the JD","Budget, pricing and revenue what-ifs analysed in minutes"]}
+  };
+  var ex=document.querySelector('.explorer'),out=document.getElementById('rfOut'),wins=document.getElementById('rfWins');
+  document.querySelectorAll('.role').forEach(function(btn){btn.addEventListener('click',function(){
+    var on=btn.getAttribute('aria-pressed')!=='true';
+    document.querySelectorAll('.role').forEach(function(b){b.setAttribute('aria-pressed','false')});
+    document.querySelectorAll('.mod').forEach(function(m){m.classList.remove('hl')});
+    document.querySelectorAll('.cnt').forEach(function(c){c.classList.remove('on')});
+    if(!on){ex.classList.remove('filtering');document.getElementById('rfRole').hidden=true;out.hidden=true;return}
+    btn.setAttribute('aria-pressed','true');ex.classList.add('filtering');
+    var r=R[btn.dataset.role],first=null;
+    r.mods.forEach(function(id){var m=document.querySelector('.mod[data-mod="'+id+'"]');m.classList.add('hl');if(!first)first=m});
+    ['d1','d2'].forEach(function(d){var n=document.querySelectorAll('#pane-'+d+' .mod.hl').length,c=document.querySelector('[data-cnt='+d+']');c.textContent=n;c.classList.toggle('on',n>0)});
+    wins.innerHTML=r.wins.map(function(w){return '<li>'+w+'</li>'}).join('');
+    document.getElementById('rfRole').hidden=false;out.hidden=false;
+    if(first){showTab(document.getElementById(first.closest('.pane').id.replace('pane','tab')));document.querySelectorAll('.mod').forEach(function(m){m.open=m.classList.contains('hl')&&m===first})}
+  })});
+  document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){var p=document.getElementById(b.getAttribute('aria-controls'));var f=p.querySelector('.mod.hl')||p.querySelector('.mod');if(f&&!p.querySelector('.mod[open]'))f.open=true})});
+  var els=document.querySelectorAll(".pl-grid div,.fact,.rolefinder,.tabs,.sec-head,.build,.lab,.hub-core,.ch,.night,.dl li,.imp,.step,.mix,.t-photo,.creds,.brands .box,.cta h2,.toolwall");
+  els.forEach(function(e,i){e.classList.add("reveal");e.style.transitionDelay=((i%3)*80)+"ms"});
+  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add("in")})}
+})();
+</script>
+</body>
+</html>
